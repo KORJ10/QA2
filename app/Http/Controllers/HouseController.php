@@ -10,11 +10,13 @@ class HouseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return
      */
     public function index()
     {
-        //
+        $houses = House::all();
+         dd($houses);
+        return view('houses.index','houses');
     }
 
     /**

@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\App\Http\Controllers\HouseController;
+use Illuminate\App\Http\Controllers\FlatController;
+use Illuminate\App\Http\Controllers\ClientController;
+use Illuminate\App\Http\Controllers\SaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-//
-//Route::get('/', [SalesController::class, 'index'])->name('mainPage.index');
+Route::get('/', function () {
+    return view('mainPage');
+});
+
+Route::get('/house',[HouseController::class,'index'])->name('house.index');
+
+
 
 
