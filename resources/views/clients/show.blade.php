@@ -14,7 +14,7 @@
         td{border:1px solid black;margin:1px}
         tr{margin:5px}
     </style>
-    <title>BC's house page</title>
+    <title>BC's client page</title>
 </head>
 <body>
 <div style="display:inline">
@@ -36,9 +36,9 @@
         </tbody>
     </table>
     <br>
-    <a href="{{ route('', $client) }}" class="btn btn-primary btn-lg" tabindex="-1" role="button">Edit</a>
+    <a href="{{ route('client.edit', $client) }}" class="btn btn-primary btn-lg" tabindex="-1" role="button">Edit</a>
     <br>
-    <form action="{{ route('', $client) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('client.destroy', $client) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('DELETE')
         <button type="submit" class="btn btn-danger">Delete</button>

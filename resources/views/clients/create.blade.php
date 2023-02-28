@@ -11,22 +11,22 @@
 </head>
 <body>
 
-<form action="{{ route('.store') }}" method="POST" style="text-align: center">
+<form action="{{ route('client.store') }}" method="POST" style="text-align: center">
     @csrf
     <div class="form-group container" style="width:300px;" >
         <label for="field">Full name</label>
-        <input name="house_name" type="text" class="form-control" id="field" placeholder="Write full name">
+        <input name="full_name" type="text" class="form-control" id="field" placeholder="Write full name">
     </div>
     <br>
     <div class="form-group container" style="width:300px;" >
         <label for="field">Phone number</label>
-        <input name="price_for_1sqr_per_meter" type="number" class="form-control" id="field" placeholder="phone number
+        <input name="phone_number" type="number" class="form-control" id="field" placeholder="phone number
         " min="0">
     </div>
     <br>
     <div class="form-group container" style="width:300px;" >
         <label for="field">Email</label>
-        <input name="construction_date" type="date" class="form-control" id="field" placeholder="Email">
+        <input name="email" type="email" class="form-control" id="field" placeholder="Email">
     </div>
     <br>
     <button type="submit" class="btn btn-primary container" style="width:100px" >Save</button>

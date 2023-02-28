@@ -29,4 +29,5 @@ Route::get('/house/edit/{house}',[HouseController::class,'edit'])->name('house.e
 Route::put('/house/update/{house}',[HouseController::class,'update'])->name('house.update');
 Route::delete('/house/delete/{house}',[HouseController::class,'destroy'])->name('house.delete');
 
-Route::get('/client',[ClientController::class,'index']);
+Route::resource('client', ClientController::class);
+Route::resource('flat', ClientController::class);

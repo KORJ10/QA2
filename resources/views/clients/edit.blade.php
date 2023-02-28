@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="{{ route('',$client) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('client.edit',$client) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div class="form-group">

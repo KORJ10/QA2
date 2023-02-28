@@ -14,7 +14,7 @@
         tr{margin:5px}
     </style>
     <title>BC's Client page</title>
-    <a href="{{ route('') }}"><button style="position:relative;right:0;display:block">Add new house</button></a><br>
+    <a href="{{ route('flat.create') }}"><button style="position:relative;right:0;display:block">Add new house</button></a><br>
 </head>
 <body>
 <div style="display:inline">
@@ -27,15 +27,15 @@
         <th>Email</th>
         </thead>
 
-        @foreach($clients as $client)
+        @foreach($flats as $flat)
 
             <tbody>
 
             <tr>
-                <td><a href="{{ route('client.show',$client) }}">{{$client->id}}</td></a>
-                <td><a href="{{ route('client.show',$client) }}">{{$client->full_name}}</a></td>
-                <td>{{$client->phone_number}}</td>
-                <td>{{$client->email}}</td>
+                <td><a href="{{ route('flat.show',$flat) }}">{{$flat->id}}</td></a>
+                <td><a href="{{ route('flat.show',$flat) }}">{{$flat->price_for_1sqr_per_meter}}</a></td>
+                <td>{{$flat->floor}}</td>
+                <td>{{$flat->count_of_room}}</td>
 
             </tr>
             </tbody>

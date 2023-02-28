@@ -14,7 +14,7 @@
         tr{margin:5px}
     </style>
     <title>BC's Client page</title>
-    <a href="{{ route('') }}"><button style="position:relative;right:0;display:block">Add new house</button></a><br>
+    <a href="{{ route('client.create') }}"><button style="position:relative;right:0;display:block">Add new house</button></a><br>
 </head>
 <body>
 <div style="display:inline">
