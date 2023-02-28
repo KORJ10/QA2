@@ -13,8 +13,8 @@
         td{border:1px solid black;margin:1px}
         tr{margin:5px}
     </style>
-    <title>BC's Client page</title>
-    <a href="{{ route('flat.create') }}"><button style="position:relative;right:0;display:block">Add new house</button></a><br>
+    <title>BC's Flat page</title>
+    <a href="{{ route('flat.create') }}"><button style="position:relative;right:0;display:block">Add new flat</button></a><br>
 </head>
 <body>
 <div style="display:inline">
@@ -22,9 +22,9 @@
 
         <thead>
         <th>id</th>
-        <th>Name</th>
-        <th>Phone</th>
-        <th>Email</th>
+        <th>Room</th>
+        <th>Price</th>
+        <th>Count</th>
         </thead>
 
         @foreach($flats as $flat)

@@ -7,24 +7,24 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Add new client</title>
+    <title>Add new flat</title>
 </head>
 <body>
 
 <form action="{{ route('flat.store') }}" method="POST" style="text-align: center">
     @csrf
     <div class="form-group container" style="width:300px;" >
-        <label for="field">Full name</label>
+        <label for="field">Floor</label>
         <input name="floor" type="text" class="form-control" id="field" placeholder="On which floor">
     </div>
     <br>
     <div class="form-group container" style="width:300px;" >
-        <label for="field">Phone number</label>
+        <label for="field">Price</label>
         <input name="price_for_1sqr_per_meter" type="number" class="form-control" id="field" placeholder="Price" min="0">
     </div>
     <br>
     <div class="form-group container" style="width:300px;" >
-        <label for="field">Email</label>
+        <label for="field"><Rooms></Rooms></label>
         <input name="count_of_room" type="number" class="form-control" id="field" placeholder="Room count" min="0">
     </div>
     <br>

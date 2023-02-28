@@ -16,7 +16,7 @@ class FlatController extends Controller
     {
         $flats = Flat::all();
 
-        return view('houses.index',compact('flats'));
+        return view('flats.index',compact('flats'));
     }
 
     /**
@@ -37,8 +37,10 @@ class FlatController extends Controller
      */
     public function store(Request $request)
     {
-        $flat = Flat::create($request-all());
+        $flat = Flat::create($request->all());
         $flat->save();
+
+        return redirect()->route('flat.index');
     }
 
     /**
@@ -72,7 +74,7 @@ class FlatController extends Controller
      */
     public function update(Request $request, Flat $flat)
     {
-        $flat->update($request-all());
+        $flat->update($request->all());
         $flat->save();
 
         return redirect()->route('flats.index');

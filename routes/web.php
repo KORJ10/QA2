@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\HouseController;
+use App\Http\Controllers\HouseController;
 use App\Http\Controllers\FlatController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SaleController;
@@ -29,5 +29,18 @@ Route::get('/house/edit/{house}',[HouseController::class,'edit'])->name('house.e
 Route::put('/house/update/{house}',[HouseController::class,'update'])->name('house.update');
 Route::delete('/house/delete/{house}',[HouseController::class,'destroy'])->name('house.delete');
 
-Route::resource('client', ClientController::class);
-Route::resource('flat', ClientController::class);
+Route::get('/client',[ClientController::class,'index'])->name('client.index');
+Route::get('/save_client',[ClientController::class,'create'])->name('client.create');
+Route::post('/client', [ClientController::class, 'store'])->name('client.store');
+Route::get('/client/show/{client}',[ClientController::class,'show'])->name('client.show');
+Route::get('/client/edit/{client}',[ClientController::class,'edit'])->name('client.edit');
+Route::put('/client/update/{client}',[ClientController::class,'update'])->name('client.update');
+Route::delete('/client/delete/{client}',[ClientController::class,'destroy'])->name('client.destroy');
+
+Route::get('/flat',[FlatController::class,'index'])->name('flat.index');
+Route::get('/save_flat',[FlatController::class,'create'])->name('flat.create');
+Route::post('/flat', [FlatController::class, 'store'])->name('flat.store');
+Route::get('/flat/show/{flat}',[FlatController::class,'show'])->name('flat.show');
+Route::get('/flat/edit/{flat}',[FlatController::class,'edit'])->name('flat.edit');
+Route::put('/flat/update/{flat}',[FlatController::class,'update'])->name('flat.update');
+Route::delete('/flat/delete/{flat}',[FlatController::class,'destroy'])->name('flat.destroy');
