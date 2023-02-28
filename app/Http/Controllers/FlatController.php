@@ -14,7 +14,9 @@ class FlatController extends Controller
      */
     public function index()
     {
-        //
+        $flats = Flat::all();
+
+        return view('houses.index',compact('flats'));
     }
 
     /**
@@ -24,7 +26,7 @@ class FlatController extends Controller
      */
     public function create()
     {
-        //
+        return view('flats.create');
     }
 
     /**
@@ -35,7 +37,8 @@ class FlatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $flat = Flat::create($request-all());
+        $flat->save();
     }
 
     /**
@@ -46,7 +49,7 @@ class FlatController extends Controller
      */
     public function show(Flat $flat)
     {
-        //
+        return view('flats.show',compact('flat'));
     }
 
     /**
@@ -57,7 +60,7 @@ class FlatController extends Controller
      */
     public function edit(Flat $flat)
     {
-        //
+        return view('flats.edit',compact('flat'));
     }
 
     /**
@@ -69,7 +72,10 @@ class FlatController extends Controller
      */
     public function update(Request $request, Flat $flat)
     {
-        //
+        $flat->update($request-all());
+        $flat->save();
+
+        return redirect()->route('flats.index');
     }
 
     /**
@@ -80,6 +86,8 @@ class FlatController extends Controller
      */
     public function destroy(Flat $flat)
     {
-        //
+        $flat->delete();
+
+        return redirect()->route('client.index');
     }
 }

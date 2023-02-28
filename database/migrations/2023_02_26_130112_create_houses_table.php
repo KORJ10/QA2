@@ -19,7 +19,6 @@ class CreateHousesTable extends Migration
             $table->integer('price_for_1sqr_per_meter');
             $table->date('construction_date');
             $table->integer('common_count_of_flats');
-
             $table->timestamps();
         });
     }

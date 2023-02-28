@@ -15,8 +15,8 @@ class HouseController extends Controller
     public function index()
     {
         $houses = House::all();
-         dd($houses);
-        return view('houses.index','houses');
+
+        return view('houses.index',['houses'=>$houses]);
     }
 
     /**
@@ -26,7 +26,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-        //
+        return view('houses.create');
     }
 
     /**
@@ -37,7 +37,10 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $house = House::create($request->all());
+        $house->save();
+
+        return redirect()->route('house.index');
     }
 
     /**
@@ -48,7 +51,7 @@ class HouseController extends Controller
      */
     public function show(House $house)
     {
-        //
+        return view('houses.show',['house'=>$house]);
     }
 
     /**
@@ -59,7 +62,7 @@ class HouseController extends Controller
      */
     public function edit(House $house)
     {
-        //
+        return view('houses.edit',['house'=>$house]);
     }
 
     /**
@@ -71,7 +74,10 @@ class HouseController extends Controller
      */
     public function update(Request $request, House $house)
     {
-        //
+        $house->update($request->all());
+        $house->save();
+
+        return redirect()->route('house.index');
     }
 
     /**
@@ -82,6 +88,8 @@ class HouseController extends Controller
      */
     public function destroy(House $house)
     {
-        //
+        $house->delete();
+
+        return redirect()->route('house.index');
     }
 }

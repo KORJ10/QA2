@@ -15,7 +15,7 @@ class CreateFlatsTable extends Migration
     {
         Schema::create('flats', function (Blueprint $table) {
             $table->id();
-            $table->integer('price_for_1sqr/m');
+            $table->integer('price_for_1sqr_per_meter');
             $table->integer('floor');
             $table->integer('count_of_room');
             $table->timestamps();

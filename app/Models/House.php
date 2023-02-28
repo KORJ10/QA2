@@ -9,7 +9,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class House extends Model
 {
-    protected $fillable = ['id','house_name','price_for_1sqr/m','construction_date','common_count_of_flats'];
+    protected $fillable = [
+        'id',
+        'house_name',
+        'price_for_1sqr_per_meter',
+        'construction_date',
+        'common_count_of_flats'
+    ];
 
     public function flat(): HasMany
     {
