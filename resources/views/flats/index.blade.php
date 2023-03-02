@@ -22,9 +22,9 @@
 
         <thead>
         <th>id</th>
-        <th>Room</th>
+        <th>Floor</th>
         <th>Price</th>
-        <th>Count</th>
+        <th>Room</th>
         </thead>
 
         @foreach($flats as $flat)

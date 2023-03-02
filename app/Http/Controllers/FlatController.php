@@ -77,7 +77,7 @@ class FlatController extends Controller
         $flat->update($request->all());
         $flat->save();
 
-        return redirect()->route('flats.index');
+      return redirect()->route('flat.index');
     }
 
     /**
@@ -90,6 +90,6 @@ class FlatController extends Controller
     {
         $flat->delete();
 
-        return redirect()->route('client.index');
+        return redirect()->route('flat.index');
     }
 }

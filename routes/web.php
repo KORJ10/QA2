@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HouseController;
-use App\Http\Controllers\FlatController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\SaleController;
 
@@ -37,10 +36,4 @@ Route::get('/client/edit/{client}',[ClientController::class,'edit'])->name('clie
 Route::put('/client/update/{client}',[ClientController::class,'update'])->name('client.update');
 Route::delete('/client/delete/{client}',[ClientController::class,'destroy'])->name('client.destroy');
 
-Route::get('/flat',[FlatController::class,'index'])->name('flat.index');
-Route::get('/save_flat',[FlatController::class,'create'])->name('flat.create');
-Route::post('/flat', [FlatController::class, 'store'])->name('flat.store');
-Route::get('/flat/show/{flat}',[FlatController::class,'show'])->name('flat.show');
-Route::get('/flat/edit/{flat}',[FlatController::class,'edit'])->name('flat.edit');
-Route::put('/flat/update/{flat}',[FlatController::class,'update'])->name('flat.update');
-Route::delete('/flat/delete/{flat}',[FlatController::class,'destroy'])->name('flat.destroy');
+Route::resource('flat','App\Http\Controllers\FlatController');

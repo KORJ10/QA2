@@ -11,24 +11,24 @@
 </head>
 <body>
 <div class="container">
-    <form action="{{ route('flat.edit',$flat) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('flat.update',$flat) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div class="form-group">
-            <label for="field">Name</label>
-            <input type="text" value="{{ $flat->id }}" class="form-control" name="house_name" id="field" placeholder="Edit the ID">
+            <label for="field">ID</label>
+            <input type="text" value="{{ $flat->id }}" class="form-control" name="id" id="field" placeholder="Edit the ID">
+        </div>
+        <div class="form-group">
+            <label for="field">Floor</label>
+            <input type="text" value="{{ $flat->floor}}" class="form-control" name="floor" id="field" placeholder="Edit floor">
         </div>
         <div class="form-group">
             <label for="field">Price</label>
-            <input type="text" value="{{ $flat->floor}}" class="form-control" name="price_for_1sqr_per_meter" id="field" placeholder="Edit floor">
+            <input type="text" value="{{ $flat->price_for_1sqr_per_meter }}" class="form-control" name="price_for_1sqr_per_meter" id="field" placeholder="Edit price">
         </div>
         <div class="form-group">
-            <label for="field">Date</label>
-            <input type="text" value="{{ $flat->price_for_1sqr_per_meter }}" class="form-control" name="construction_date" id="field" placeholder="Edit price">
-        </div>
-        <div class="form-group">
-            <label for="field">Flats</label>
-            <input type="text" value="{{ $flat->count_of_room }}" class="form-control" name="common_count_of_flats" id="field" placeholder="Edit count">
+            <label for="field">Rooms</label>
+            <input type="text" value="{{ $flat->count_of_room }}" class="form-control" name="count_of_room" id="field" placeholder="Edit count">
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Save</button>
